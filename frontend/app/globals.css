@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+.dark {
+  --background: 7 11 18;
+  --foreground: 237 242 247;
+  --muted: 18 26 38;
+  --muted-foreground: 154 166 184;
+  --panel: 13 19 29;
+  --panel-strong: 21 30 44;
+  --border: 52 65 84;
+  --accent: 39 211 189;
+  --accent-foreground: 4 19 22;
+  --success: 58 211 122;
+  --warning: 244 184 73;
+  --danger: 248 91 112;
+}
+
+.light {
+  --background: 244 247 251;
+  --foreground: 17 24 39;
+  --muted: 231 236 244;
+  --muted-foreground: 83 96 116;
+  --panel: 255 255 255;
+  --panel-strong: 240 245 250;
+  --border: 205 214 226;
+  --accent: 0 122 132;
+  --accent-foreground: 239 253 255;
+  --success: 23 143 78;
+  --warning: 173 113 19;
+  --danger: 203 50 70;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(39, 211, 189, 0.12), transparent 28rem),
+    radial-gradient(circle at 95% 10%, rgba(244, 184, 73, 0.08), transparent 26rem),
+    rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgba(39, 211, 189, 0.28);
+}
+
+.app-scrollbar {
+  scrollbar-color: rgba(154, 166, 184, 0.5) transparent;
+  scrollbar-width: thin;
+}
+
+.app-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.app-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(154, 166, 184, 0.35);
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
+}
+
+.nexus-markdown {
+  color: rgb(var(--foreground));
+  line-height: 1.7;
+}
+
+.nexus-markdown > * + * {
+  margin-top: 0.85rem;
+}
+
+.nexus-markdown h1,
+.nexus-markdown h2,
+.nexus-markdown h3,
+.nexus-markdown h4,
+.nexus-markdown h5,
+.nexus-markdown h6 {
+  color: rgb(var(--foreground));
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.nexus-markdown h1 {
+  font-size: 1.55rem;
+}
+
+.nexus-markdown h2 {
+  font-size: 1.3rem;
+}
+
+.nexus-markdown h3 {
+  font-size: 1.12rem;
+}
+
+.nexus-markdown ul,
+.nexus-markdown ol {
+  padding-left: 1.4rem;
+}
+
+.nexus-markdown li + li {
+  margin-top: 0.35rem;
+}
+
+.nexus-markdown a {
+  color: rgb(var(--accent));
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.nexus-markdown blockquote {
+  border-left: 3px solid rgba(39, 211, 189, 0.7);
+  color: rgb(var(--muted-foreground));
+  padding-left: 1rem;
+}
+
+.nexus-markdown code {
+  border: 1px solid rgba(154, 166, 184, 0.22);
+  border-radius: 6px;
+  background: rgba(2, 6, 12, 0.35);
+  color: rgb(var(--foreground));
+  padding: 0.1rem 0.32rem;
+  font-size: 0.9em;
+}
+
+.light .nexus-markdown code {
+  background: rgba(231, 236, 244, 0.8);
+}

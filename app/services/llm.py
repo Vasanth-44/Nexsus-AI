@@ -5,7 +5,7 @@ from app.models.schemas import Roadmap
 load_dotenv()
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-3.6-flash"
+    model="gemini-1.5-flash"
 )
 
 structured_llm = llm.with_structured_output(Roadmap)
